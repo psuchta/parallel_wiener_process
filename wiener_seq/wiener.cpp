@@ -41,10 +41,10 @@ double* generate_random_array(int size)
   return randoms;
 }
 
-long double wiener_value(double t)
+double wiener_value(double t)
 {
   double sqrt_2 = sqrt(2);
-  long double sum = 0;
+  double sum = 0;
   double *randoms = generate_random_array(random_array_size);
 
   for (int n = 0; n < random_array_size; n++)
@@ -69,10 +69,10 @@ void generate_random_chart(){
 
 int main(int argc, const char *argv[])
 {
-  generate_random_chart();
+  // generate_random_chart();
   auto start = std::chrono::high_resolution_clock::now();
 
-  long double x;
+  double x;
   std::ofstream fout("charts/wiener.dat");
 
   for(double t = 0; t < 1; t += 0.001){
